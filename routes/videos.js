@@ -20,7 +20,6 @@ const writeVideosData = (data) => {
 };
 
 router.route("/").get((req, res) => {
-    console.log("working");
   const videos = readVideosData();
   const bareVideo = videos.map((video) => {
     return {
@@ -37,7 +36,7 @@ router.route("/").get((req, res) => {
         id: uuidv4(),
         title: req.body.title,
         channel: "Private Channel",
-        image: "../public/upload-preview.jpg",
+        image: "/upload-preview.jpg",
         description: req.body.description,
         views: 0,
         likes: 0,
